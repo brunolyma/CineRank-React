@@ -1,0 +1,32 @@
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+
+  min-width: 320px;
+
+  background-color: #333;
+
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffc800;
+  
+  transition: 0.3s;
+}
+
+abbr {
+  text-decoration: none;
+
+  user-select: none;
+}
