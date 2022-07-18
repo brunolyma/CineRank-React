@@ -14,7 +14,7 @@ export function MovieCard({ movie, showLink = true }) {
       <h2>{movie.title}</h2>
       <p>
         <abbr title={`${movie.vote_count} votos`}>
-          <FaStar color="ffc800" /> {movie.vote_average}
+          <FaStar color="d39e00" /> {movie.vote_average}
         </abbr>
       </p>
       {showLink && <Link to={`/movie/${movie.id}`}>Detalhes</Link>}

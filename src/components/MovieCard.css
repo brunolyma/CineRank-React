@@ -33,8 +33,8 @@
   font-weight: bold;
   text-align: center;
 
-  background-color: #ffc800;
-  border: .2rem solid #ffc800;
+  background-color: #d39e00;
+  border: .2rem solid #d39e00;
   border-radius: 0.5rem;
 
   padding: 0.9rem 1rem;
@@ -45,7 +45,7 @@
 
 .movie-card a:hover {
     background-color: transparent;
-    color: #ffc800;
+    color: #d39e00;
 }
 
 @media (min-width: 320px) {

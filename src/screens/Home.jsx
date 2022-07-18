@@ -26,7 +26,7 @@ export function Home() {
 
   return (
     <div className="container">
-      <h2 className="title">Top Rated Movies:</h2>
+      <h2 className="title">Melhores Avaliados:</h2>
       <div className="movies-container">
         {topMovies === 0 && <p><FaSpinner/></p>}
         {topMovies.length > 0 && topMovies.map((movie) => {
