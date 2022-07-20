@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi";
@@ -13,9 +13,7 @@ export function Navbar() {
   }
 
   function windowSize() {
-    const [windowDimensions, setWindowDimensions] = useState(
-      getWindowSize()
-    );
+    const [windowDimensions, setWindowDimensions] = useState(getWindowSize());
 
     useEffect(() => {
       function handleResize() {
@@ -32,6 +30,14 @@ export function Navbar() {
   const [search, setSearch] = useState("");
   const [isResponsive, setIsResponsive] = useState(false);
   const navigate = useNavigate();
+
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    if (isResponsive) {
+      ref.current.focus();
+    }
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -51,9 +57,7 @@ export function Navbar() {
   return (
     <nav
       id="navbar"
-      className={
-        windowSize() < 700 && isResponsive ? "responsive" : ""
-      }
+      className={windowSize() < 700 && isResponsive ? "responsive" : ""}
     >
       <h2>
         <Link to="/">
@@ -64,11 +68,12 @@ export function Navbar() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          ref={ref}
           placeholder="Buscar..."
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button type="submit">
+        <button type="submit" onClick={handleClick}>
           <BiSearchAlt2 />
         </button>
       </form>
