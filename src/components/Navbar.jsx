@@ -33,11 +33,10 @@ export function Navbar() {
 
   const ref = useRef(null);
 
-  const handleClick = () => {
-    if (isResponsive) {
+  const handleClick = () =>
+    setTimeout(() => {
       ref.current.focus();
-    }
-  };
+    }, 250);
 
   function handleSubmit(e) {
     e.preventDefault();
